@@ -39,7 +39,11 @@ class MomentumSGD:
         Returns:
         updated_weights, np array same shape as w
         """
+        velocity = 0
+        velocity = self.momentum*velocity - learning_rate * d_w
+        updated_weights = w + velocity
+        return updated_weights
         # TODO Implement momentum update
         # Hint: you'll need to introduce some variables to remember
         # velocity from the previous updates
-        raise Exception("Not implemented!")        
+        #raise Exception("Not implemented!")
